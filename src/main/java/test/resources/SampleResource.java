@@ -12,7 +12,7 @@ public class SampleResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String showText() {
         
-        return "Hello Dropwizard";
+        return "Hello Dropwizard!";
     }
 
 }

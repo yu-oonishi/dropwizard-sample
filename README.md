@@ -1,4 +1,5 @@
 # Dropwizard sample-application
+[![Build Status](https://travis-ci.org/yu-oonishi/dropwizard-sample.svg?branch=master)](https://travis-ci.org/yu-oonishi/dropwizard-sample)
 
 ## Running The Application
 

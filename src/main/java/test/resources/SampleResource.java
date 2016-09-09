@@ -1,14 +1,10 @@
 package test.resources;
 
-import java.io.BufferedReader;
+import com.google.common.io.Resources;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URISyntaxException;
-import java.nio.charset.Charset;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -28,12 +24,10 @@ public class SampleResource {
     public String showHellowWorld() {
         String content = "";
         try {
-            content = new String(Files.readAllBytes(Paths.get(ClassLoader.getSystemResource("index.html").toURI())),
-                    StandardCharsets.UTF_8);
+            URL url = Resources.getResource("index.html");
+            content = Resources.toString(url, StandardCharsets.UTF_8);
         } catch (IOException ioe) {
             ioe.printStackTrace();
-        } catch (URISyntaxException urie) {
-            urie.printStackTrace();
         }
 
         return content;
